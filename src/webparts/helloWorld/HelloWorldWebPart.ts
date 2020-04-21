@@ -107,7 +107,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart <IHelloWorl
   }
 
   private _readListItem(): void {
-    const id: number = 1;
+    const id: number = 2;
     this._getListItem(id).then(listItem => {
       this._operationResults.innerHTML = `
       <div>
@@ -135,7 +135,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart <IHelloWorl
   }
 
   private _updateListItem(): void {
-    const url: string = this.context.pageContext.site.absoluteUrl+ "/_api/web/lists/getbytitle('My List')/items(1)";
+    const url: string = this.context.pageContext.site.absoluteUrl+ "/_api/web/lists/getbytitle('My List')/items(2)";
     const itemDefinition: any = {
       "Title": "Modified title!"
     };
@@ -158,7 +158,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart <IHelloWorl
   }
 
   private _deleteListItem(): void {
-    const url: string = this.context.pageContext.site.absoluteUrl + "/_api/web/lists/getbytitle('My List')/items(1)";
+    const url: string = this.context.pageContext.site.absoluteUrl + "/_api/web/lists/getbytitle('My List')/items(2)";
     const headers: any = { "X-HTTP-Method":"DELETE", "IF-MATCH": "*"};
     const spHttpeClientOptions: ISPHttpClientOptions = {
       "headers": headers
